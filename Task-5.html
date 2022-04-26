@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-top: 5rem;
+        }
+
+        .blue{
+            background-color: blue;
+            box-shadow: 0px 0px 6pxp 5px;
+        }
+        .green{
+            background-color: green;
+            box-shadow: 0px 0px 6px 5px;
+        }
+        .red{
+            background-color: red;
+            box-shadow: 0px 0px 6px 5px;
+        }
+        .card{
+            border: 1px solid;
+            height: 10rem;
+            width: 10rem;
+            margin: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card red"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+
+    <script>
+        //q Create a generic function to select all sibling of a given node. Using that function delete all sibling of that node
+
+        let red = document.querySelector(".red");
+        
+        // deleteredSiblings(red);
+        // // console.log(lefts);
+        // red.addEventListener("click",(e)=>{ 
+        // console.log(red);
+        // let lefts = red.previousElementSibling;
+        // let rights = red.nextElementSibling;
+        // let parent = red.parentElement;
+        // parent.removeChild(lefts);
+        // parent.removeChild(rights);
+        // })
+        
+    //     red.addEventListener("click",(e)=>{
+    //         deleteredSiblings(red);
+    //     });
+
+    //     function deleteredSiblings(red){
+    //     let left = red.previousElementSibling;
+    //     let right = red.nextElementSibling;
+
+    //     while(left){
+    //         left.remove();
+    //         left = red.previousElementSibling;
+    //     }
+        
+    //     while(right){
+    //         right.remove();
+    //         right = red.nextElementSibling;
+    //     }
+    //  }
+
+
+    red.addEventListener("click",(e)=>{
+        thirdway(red);
+    })
+
+    function thirdway(red){
+        var cardList = document.querySelectorAll(".card");
+        cardList.forEach((card)=>{
+            if(card!==red){
+                card.remove();
+            }
+        })
+    }
+    
+    </script>
+</body>
+</html>

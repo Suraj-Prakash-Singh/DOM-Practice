@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursive Div</title>
+    <style>
+      div {
+        margin: 2rem;
+        min-height: 5rem;
+        min-width: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="background-color:red">
+      <div style="background-color: black">
+        <div style="background-color: green">
+          <div style="background-color:blue"></div>
+        </div>
+      </div>
+    </div>
+    <div></div>
+
+    <script>
+      // Q- Write a script using the method querySelector that goes into lowest depth div and deletes it. Alternatively also write one line non recursive solution using querySelectorAll
+
+      //solution 1
+      let outer  = document.querySelector("div");
+        
+    //   while(outer.children.length > 0){
+    //         outer = outer.children[0];
+    //   }
+    //   outer.remove();
+
+    //recursive solution
+    //  function removeineer(outer){
+    //      if(outer.children.length==0){
+    //          outer.remove();
+    //          return;
+    //      }
+    //      removeineer(outer.children[0]);
+    //  }
+
+    //  removeineer(outer);
+
+    //one liner solution
+
+    let x = document.querySelectorAll("div");
+    x[3].remove();
+
+    </script>
+  </body>
+</html>
